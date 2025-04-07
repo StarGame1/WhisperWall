@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 280 50% 97%;
+    --foreground: 260 60% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 260 60% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 260 60% 15%;
+
+    --primary: 250 95% 65%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 170 80% 45%;
+    --secondary-foreground: 0 0% 100%;
+
+    --accent: 330 90% 65%;
+    --accent-foreground: 0 0% 100%;
+
+    --muted: 260 20% 90%;
+    --muted-foreground: 260 30% 40%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 260 30% 90%;
+    --input: 260 30% 90%;
+    --ring: 250 95% 65%;
+
+    --radius: 1rem;
+
+    /* RGB values for gradients */
+    --primary-rgb: 124, 58, 237;
+    --secondary-rgb: 20, 184, 166;
+    --accent-rgb: 236, 72, 153;
+    --card-rgb: 255, 255, 255;
+  }
+
+  .dark {
+    --background: 260 50% 10%;
+    --foreground: 260 20% 90%;
+
+    --card: 260 40% 15%;
+    --card-foreground: 260 20% 90%;
+
+    --popover: 260 40% 15%;
+    --popover-foreground: 260 20% 90%;
+
+    --primary: 250 95% 65%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 170 80% 45%;
+    --secondary-foreground: 0 0% 100%;
+
+    --accent: 330 90% 65%;
+    --accent-foreground: 0 0% 100%;
+
+    --muted: 260 40% 20%;
+    --muted-foreground: 260 30% 70%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 260 40% 25%;
+    --input: 260 40% 25%;
+    --ring: 250 95% 65%;
+
+    /* RGB values for gradients */
+    --primary-rgb: 124, 58, 237;
+    --secondary-rgb: 20, 184, 166;
+    --accent-rgb: 236, 72, 153;
+    --card-rgb: 30, 30, 46;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    background-image: radial-gradient(circle at 100% 0%, rgba(var(--accent-rgb) / 0.1) 0%, transparent 25%),
+      radial-gradient(circle at 0% 100%, rgba(var(--secondary-rgb) / 0.1) 0%, transparent 25%);
+    background-attachment: fixed;
+  }
+}
+
+@layer utilities {
+  .bg-gradient-card {
+    background: linear-gradient(135deg, rgba(var(--card-rgb) / 0.7) 0%, rgba(var(--card-rgb) / 0.9) 100%);
+    backdrop-filter: blur(8px);
+  }
+
+  .bg-gradient-message {
+    background: linear-gradient(135deg, rgba(var(--primary-rgb) / 0.05) 0%, rgba(var(--primary-rgb) / 0.15) 100%);
+  }
+
+  .bg-gradient-reply {
+    background: linear-gradient(135deg, rgba(var(--secondary-rgb) / 0.05) 0%, rgba(var(--secondary-rgb) / 0.15) 100%);
+  }
+
+  .text-gradient {
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(90deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+  }
+
+  .border-gradient {
+    border-image: linear-gradient(to right, hsl(var(--primary)), hsl(var(--accent))) 1;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+}
+

@@ -1,0 +1,12 @@
+CULORI LOGO
+FUNDAL: #262523
+FONT: #dddaba
+
+FONTURI:
+
+WHISPER: Bodoni FLF
+Wall: Slight
+text aditional: TT Chocolates
+
+WhisperWall2005@gmail.com
+12Whisper34
